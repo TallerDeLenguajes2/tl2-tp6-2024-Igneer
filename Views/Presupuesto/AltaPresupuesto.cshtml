@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Alta de Presupuesto";
+}
+
+<h1 class = "d-flex justify-content-center">@ViewData["Title"]</h1>
+
+@model Presupuesto
+
+<div class="container mt-5">
+    <h2>Formulario de Registro</h2>
+    <form asp-controller="Presupuesto" asp-action="InsertPresupuesto">
+        <div class="from-group">
+            <label asp-for=@Model.NombreDestinatario class="form-label"></label>
+            <input asp-for=@Model.NombreDestinatario required type="text" class="form-control">
+        </div>
+        <div class = "text-center">
+            <input type="submit" value ="Cargar" class="btn btn-success m-3">
+        </div>
+    </form>
+</div>
+

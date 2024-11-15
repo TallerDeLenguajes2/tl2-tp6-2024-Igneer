@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<h1 class = "d-flex justify-content-center">@ViewData["Title"]</h1>
+
+@model Presupuesto
+
+
+    @if(Model.getListaDetalle().Count() == 0)
+    {
+        <div class = "text-center">
+            <h1 class="text-danger">No hay productos agregados a este Presupuesto</h1>
+            <div class = "text-center">
+                <a class = "btn btn-info text-light text-decoration-none" asp-controller="Presupuesto" asp-action="Presupuestos">Volver</a>
+            </div>
+        </div>
+    }else
+    {
+        <table class = "table"> 
+            <thead> 
+                <tr> 
+                    <th scope = "col">#</th> 
+                    <th scope = "col">Nombre</th> 
+                    <th scope = "col">Precio</th> 
+                    <th scope = "col">Cantidad</th> 
+                </tr> 
+            </thead> 
+            <tbody>
+                @foreach (var p in Model.getListaDetalle())
+                {   
+                    <tr> 
+                        <th scope = "col">@p.Producto.IdProducto</th> 
+                        <td>@p.Producto.Descripcion</td> 
+                        <td>@p.Producto.Precio</td>
+                        <td>@{int cantidad = Model.Detalle.FirstOrDefault(d => d.Producto.IdProducto == p.Producto.IdProducto).Cantidad;}@cantidad</td>
+                    </tr> 
+                }
+            </tbody>
+        </table>
+        <div class="container"> 
+            <div class="row">
+                @{
+                    var montoPresupuesto = Model.montoPresupuesto().ToString("N2", new System.Globalization.CultureInfo("es-AR")); 
+                    var montoPresupuestoConIVA = Model.montoPresupuestoConIVA().ToString("N2", new System.Globalization.CultureInfo("es-AR")); 
+                } 
+                <div class="text-center col-md-6"> 
+                    <p><strong>TOTAL:</strong> $@montoPresupuesto</p> 
+                </div> 
+                <div class="text-center col-md-6"> 
+                    <p><strong>TOTAL CON IVA:</strong> $@montoPresupuestoConIVA</p> 
+                </div> 
+            </div> 
+        </div>
+        <div class = "text-center">
+            <a class = "btn btn-info text-light text-decoration-none" asp-controller="Presupuesto" asp-action="Presupuestos">Volver</a>
+        </div>
+    }
+ 

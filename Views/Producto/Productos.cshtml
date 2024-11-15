@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<h1 class = "d-flex justify-content-center">@ViewData["Title"]</h1>
+
+@model List<Producto>
+
+<table class = "table"> 
+    <thead> 
+        <tr> 
+            <th scope = "col">#</th> 
+            <th scope = "col">Nombre</th> 
+            <th scope = "col">Precio</th> 
+            <th class="text-center" scope = "col" colspan="3">Operaciones</th> 
+        </tr> 
+    </thead> 
+    <tbody>
+        @foreach (var p in Model)
+        {   
+            <tr> 
+                <th scope = "col">@p.IdProducto</th> 
+                <td>@p.Descripcion</td> 
+                <td>@p.Precio</td>
+                <td class = "text-center"><a asp-controller="Producto" asp-action="ModificarProducto" asp-route-id="@p.IdProducto" class="btn btn-warning">Modificar</a></td>
+                <td class = "text-center">
+                    <form asp-controller="Producto" asp-action="DeleteProducto" method="post" asp-route-id="@p.IdProducto">
+                        <input type="submit" onclick="return confirm('¿Está seguro de eliminar?')" class="btn btn-danger" value = "Eliminar">
+                    </form>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>
+<div class = "text-center">
+    <a class = "btn btn-success text-light text-decoration-none" asp-controller="Producto" asp-action="AltaProducto">+</a>
+</div>
+ 

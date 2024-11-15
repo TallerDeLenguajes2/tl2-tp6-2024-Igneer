@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Agregar Producto";
+}
+
+<h1 class = "d-flex justify-content-center">@ViewData["Title"]</h1>
+
+@model Presupuesto
+
+<div class="container mt-5">
+    <form asp-controller="Presupuesto" asp-action="AgregarProductoAPresupuesto">
+        <input type="hidden" asp-for=@Model.IdPresupuesto>
+        <div class="from-group">
+            <label for="idProducto" class="form-label">Id del Producto</label> 
+            <input name="idProducto" id="idProducto" required type="number" class="form-control">
+        </div>
+        <div class="from-group">
+            <label for="cantidad" class="form-label">Cantidad</label> 
+            <input name="cantidad" id="cantidad" required type="number" class="form-control">
+        </div>
+        <div class = "text-center">
+            <input type="submit" value ="Cargar" class="btn btn-success m-3">
+        </div>
+    </form>
+</div>

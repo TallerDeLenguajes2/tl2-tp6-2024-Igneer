@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "x/5Ewzrexbvzx93gfJjj0gXUmqh0OrA5Vzt6HZaAaxtO9Ah8lhszZVGkIdcD6dwhnCBGMGByKzzsy/cnk879jg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tato_\\OneDrive\\Escritorio\\tl2-tp6-2024-Igneer\\tl2-tp6-2024-Igneer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tato_\\.nuget\\packages\\microsoft.data.sqlite\\8.0.10\\microsoft.data.sqlite.8.0.10.nupkg.sha512",
+    "C:\\Users\\tato_\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.10\\microsoft.data.sqlite.core.8.0.10.nupkg.sha512",
+    "C:\\Users\\tato_\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\tato_\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
+    "C:\\Users\\tato_\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\tato_\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6\\sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
+    "C:\\Users\\tato_\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

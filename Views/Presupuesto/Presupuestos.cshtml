@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Presupuestos";
+}
+
+<h1 class = "d-flex justify-content-center">@ViewData["Title"]</h1>
+
+@model List<Presupuesto>
+
+<table class = "table"> 
+    <thead> 
+        <tr> 
+            <th scope = "col">#</th> 
+            <th scope = "col">Nombre Destinatario</th> 
+            <th scope = "col">Fecha</th> 
+            <th class="text-center" scope = "col" colspan="4">Operaciones</th> 
+        </tr> 
+    </thead> 
+    <tbody>
+        @foreach (var p in Model)
+        {   
+            <tr> 
+                <th scope = "col">@p.IdPresupuesto</th> 
+                <td>@p.NombreDestinatario</td> 
+                <td>@p.FechaCreacion</td>
+                <td class = "text-center"><a asp-controller="Presupuesto" asp-action="AgregarProducto" asp-route-idPresupuesto="@p.IdPresupuesto" class="btn btn-warning">Agregar Producto</a></td>
+                <td class = "text-center"><a asp-controller="Presupuesto" asp-action="Detalles" asp-route-id="@p.IdPresupuesto" class="btn btn-info">Detalle</a></td>
+                <td class = "text-center">
+                    <form asp-controller="Presupuesto" asp-action="DeletePresupuesto" method="post" asp-route-idPresupuesto="@p.IdPresupuesto">
+                        <input type="submit" onclick="return confirm('¿Está seguro de eliminar?')" class="btn btn-danger" value = "Eliminar">
+                    </form>
+                </td>
+            </tr> 
+        }
+    </tbody>
+</table>
+<div class = "text-center">
+    <a class = "btn btn-success text-light text-decoration-none" asp-controller="Presupuesto" asp-action="AltaPresupuesto">+</a>
+</div>
+ 
